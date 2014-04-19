@@ -16,21 +16,21 @@ Installation Wizard - Attendance Management System
             <div class="block-content">
                 {{ Form::open(array('route' => 'install.process' ,'id' => 'wizard-validate','autocomplete' => 'off')) }}
                 <div class="tab-content">
-                    <div class="tab-pane active" id="valid1">
+                    <div class="tab-pane active " id="valid1">
                         <h2><strong>Company</strong> Information</h2>
                         <hr>
                         <div class="row-form">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Company Name</label>
-                                    <input type="text" class="form-control" name="company_name" id="company_name">
+                                    <input type="text" class="form-control" name="company_name" id="companyName">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                 <label>Type of Service</label>
-                                <select name="company_service" id="" class="form-control" id="company_service">
-                                    <option value="">-</option>a
+                                <select name="company_service" class="form-control" id="companyService">
+                                    <option value=""></option>
                                     <option value="Agriculture">Agriculture</option>
                                     <option value="Accounting">Accounting</option>
                                     <option value="Advertising">Advertising</option>
@@ -85,6 +85,7 @@ Installation Wizard - Attendance Management System
                                     <option value="Trucking">Trucking</option>
                                     <option value="Venture Capital">Venture Capital</option>
                                 </select>
+                                <p id="companyTestService"></p>
                             </div>
                             </div>
                         </div>
@@ -92,13 +93,13 @@ Installation Wizard - Attendance Management System
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Company Address</label>
-                                    <textarea name="company_address" class="form-control" id="" cols="30" rows="2" id="company_address"></textarea>
+                                    <textarea name="company_address" class="form-control" cols="30" rows="2" id="companyAddress"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Company Description</label>
-                                    <textarea name="company_description" class="form-control" id="" cols="30" rows="2" id="company_description"></textarea>
+                                    <textarea name="company_description" class="form-control" cols="30" rows="2" id="companyDescription"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -110,13 +111,13 @@ Installation Wizard - Attendance Management System
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Username</label>
-                                    <input type="text" class="form-control" name="username" id="username">
+                                    <input type="text" class="form-control" name="username" id="adminUsername">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" name="password" id="password">
+                                    <input type="password" class="form-control" name="password" id="adminPassword">
                                 </div>
                             </div>
                         </div>
@@ -125,13 +126,13 @@ Installation Wizard - Attendance Management System
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control" name="name" id="name">
+                                    <input type="text" class="form-control" name="name" id="adminName">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" name="email" id="email">
+                                    <input type="text" class="form-control" name="email" id="adminEmail">
                                 </div>
                             </div>
                         </div>
@@ -147,15 +148,15 @@ Installation Wizard - Attendance Management System
                             <tbody>
                                 <tr>
                                     <td><b>Name</b></td>
-                                    <td><i>Bayaw Incorporated</i></td>
+                                    <td><i id="reviewCompanyName"></i></td>
                                     <td><b>Type of Service</b></td>
-                                    <td><i>Illegal Drugs and Shit</i></td>
+                                    <td><i id="reviewCompanyService"></i></td>
                                 </tr>
                                 <tr>
                                     <td><b>Address</b></td>
-                                    <td><i>4281 Fieldcrest Road New York, NY 10013</i></td>
+                                    <td><i id="reviewCompanyAddress"></i></td>
                                     <td><b>Description</b></td>
-                                    <td><i>4281 Fieldcrest Road New York, NY 10013</i></td>
+                                    <td><i id="reviewCompanyDescription"></i></td>
                                 </tr>
                             </tbody>
                             <thead>
@@ -164,15 +165,15 @@ Installation Wizard - Attendance Management System
                             <tbody>
                                 <tr>
                                     <td><b>Username</b></td>
-                                    <td><i>nico.penaredondo</i></td>
+                                    <td><i id="reviewAdminUsername"></i></td>
                                     <td><b>Password</b></td>
                                     <td><i>(Your Fucking Password)</i></td>
                                 </tr>
                                 <tr>
                                     <td><b>Name</b></td>
-                                    <td><i>Nico R. Penaredondo</i></td>
+                                    <td><i id="reviewAdminName"></i></td>
                                     <td><b>Email</b></td>
-                                    <td><i>nico.penaredondo@gmail.com</i></td>
+                                    <td><i id="reviewAdminEmail"></i></td>
                                 </tr>
                             </tbody>
                         </table>
