@@ -35,7 +35,7 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::guest('login');
+	if (Auth::guest()) return Redirect::guest('auth/login');
 });
 
 
@@ -81,22 +81,20 @@ Route::filter('csrf', function()
 
 /*
 |--------------------------------------------------------------------------
-| Installation Filter
+| Custom Filters
 |--------------------------------------------------------------------------
-|
-| The installation filter will detect if the web application is not installed
-|
-|
 */
 
 Route::filter('install',function(){
+	$hasDeveloper = DB::table('users')->where('role_id',1)->count();
+	if($hasDeveloper == 0) return Redirect::route('install');
+});
 
-	$hasUser = DB::table('users')->count();
+Route::filter('installed',function(){
+	$hasDeveloper = DB::table('users')->where('role_id',1)->count();
+	if($hasDeveloper > 0) return Redirect::route('auth.login');
+});
 
-	if($hasUser === 0 ){
-		return Redirect::route('install');
-	}else{
-		return Redirect::route('login');
-	}
-
+Route::filter('logged-in',function(){
+	if(Auth::check()) return Redirect::route('app.dashboard');
 });
