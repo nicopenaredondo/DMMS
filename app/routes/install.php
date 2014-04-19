@@ -1,5 +1,5 @@
 <?php
-Route::group(array('after' => 'install'),function(){
+Route::group(array('before' => 'installed'),function(){
 
 	Route::get('install',array(
 		'as' 		=> 'install',
