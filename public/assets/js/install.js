@@ -1,11 +1,3 @@
-/* file:           demo.js
- * version:        1.2
- * last changed:   13.02.2014
- * description:    This file can be removed before you use template in production.
- *                 It contains with elements used only for demo preview, and you doesnt need to include
- *                 it in your project, couse this features is individual.
-*/
-
 $(document).ready(function(){
 
     /* form wizard */
@@ -22,14 +14,6 @@ $(document).ready(function(){
                     minlength   : 3,
                     maxlength   : 32
                 },
-                company_address:{
-                    required    : true,
-                    maxlength   : 180,
-                },
-                company_description:{
-                    required    : true,
-                    maxlength   : 2000
-                },
                 company_service:{
                     required    : true
                 },
@@ -41,7 +25,7 @@ $(document).ready(function(){
                 password: {
                     required    : true,
                     minlength   : 6,
-                    maxlength   : 32
+                    maxlength   : 64
                 },
                 name: {
                     required    : true,
@@ -75,8 +59,34 @@ $(document).ready(function(){
 	  		},
                         onTabClick: function(tab, navigation, index) {return false;}
 	  	});
-
     }
     /* eof wizard validation */
     /* eof form wizard */
+
+    $("#companyName").keyup(function() {
+        $('#reviewCompanyName').html($('#companyName').val());
+    });
+
+    $('#companyService').change(function(){
+        $('#reviewCompanyService').html($('#companyService option:selected').text());
+    });
+
+    $("#companyAddress").keyup(function() {
+        $('#reviewCompanyAddress').html($('#companyAddress').val());
+    });
+
+    $("#companyDescription").keyup(function() {
+        $('#reviewCompanyDescription').html($('#companyDescription').val());
+    });
+
+    $("#adminUsername").keyup(function() {
+        $('#reviewAdminUsername').html($('#adminUsername').val());
+    });
+
+    $("#adminName").keyup(function() {
+        $('#reviewAdminName').html($('#adminName').val());
+    });
+    $("#adminEmail").keyup(function() {
+        $('#reviewAdminEmail').html($('#adminEmail').val());
+    });
 });
