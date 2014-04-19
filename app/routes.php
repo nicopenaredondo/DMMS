@@ -21,7 +21,7 @@
 */
 
 
-Route::get('/',array('before' => 'install', function()
+Route::get('/',array('before' => 'install|logged-in', function()
 {
 	return View::make('hello');
 }));
